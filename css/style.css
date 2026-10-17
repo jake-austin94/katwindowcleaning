@@ -19,10 +19,8 @@ src: url("../fonts/BalooChettan-Regular.ttf");
 @import url(animate.min.css);
 @import url(normalize.css);
 @import url(icomoon.css);
-@import url(css/font-awesome.min.css);
 @import url(meanmenu.css);
 @import url(owl.carousel.min.css);
-@import url(swiper.min.css);
 @import url(slick.css);
 @import url(jquery.fancybox.min.css);
 @import url(jquery-ui.css);
@@ -321,6 +319,11 @@ button {
   background-image: url(../images/window_cleaning_banner.jpg);
   height: 350px;
 }
+
+.commercial_window_banner {
+    background-image: url(../images/windows_banner.jpg);
+    height: 350px;
+  }
 
 .gutters_banner {
   background-image: url(../images/gutters_banner.jpg);
@@ -1137,7 +1140,6 @@ textarea#comment::placeholder {
 .card p {
   text-align: left;
   color: #25323f;
-}
 }
 
 .card_heading {
