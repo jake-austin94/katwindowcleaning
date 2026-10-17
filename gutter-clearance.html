@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" data-fade="off">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,10 +22,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="css/kat.css?v=bf6a9cf1">
+  <link rel="preload" href="fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/kat.css?v=3988a8d0">
+  <link rel="preload" as="image" type="image/webp" media="(max-width: 1080px)" imagesrcset="images/r/gutters_banner-m-320.webp 320w, images/r/gutters_banner-m-480.webp 480w, images/r/gutters_banner-m-640.webp 640w, images/r/gutters_banner-m-800.webp 800w, images/r/gutters_banner-m-953.webp 953w" imagesizes="130vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" media="(min-width: 1081px)" imagesrcset="images/r/gutters_banner-320.webp 320w, images/r/gutters_banner-480.webp 480w, images/r/gutters_banner-640.webp 640w, images/r/gutters_banner-800.webp 800w, images/r/gutters_banner-1024.webp 1024w, images/r/gutters_banner-1280.webp 1280w, images/r/gutters_banner-1600.webp 1600w, images/r/gutters_banner-1800.webp 1800w" imagesizes="175vw" fetchpriority="high">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://katwindowcleaning.com/#business", "name": "KAT Window Cleaning", "url": "https://katwindowcleaning.com/", "telephone": "+447932008040", "email": "info@katwindowcleaning.com", "image": "https://katwindowcleaning.com/images/og-image.jpg", "logo": "https://katwindowcleaning.com/images/icon-512.png", "priceRange": "££", "address": {"@type": "PostalAddress", "addressLocality": "Watton", "addressRegion": "Norfolk", "addressCountry": "GB"}, "areaServed": [{"@type": "City", "name": "Watton"}, {"@type": "City", "name": "Thetford"}, {"@type": "City", "name": "Swaffham"}, {"@type": "City", "name": "Attleborough"}, {"@type": "City", "name": "Hingham"}, {"@type": "City", "name": "Great Hockham"}], "sameAs": ["https://www.google.com/maps?cid=2617828129169492736"], "founder": {"@type": "Person", "name": "Andrew"}, "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Cleaning services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Window cleaning", "url": "https://katwindowcleaning.com/window-cleaning.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial window cleaning", "url": "https://katwindowcleaning.com/commercial-window-cleaning.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gutter clearance", "url": "https://katwindowcleaning.com/gutter-clearance.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Solar panel cleaning", "url": "https://katwindowcleaning.com/solar-panels.html"}}]}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://katwindowcleaning.com/"}, {"@type": "ListItem", "position": 2, "name": "Gutter Clearance", "item": "https://katwindowcleaning.com/gutter-clearance.html"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Gutter clearance", "serviceType": "Gutter clearance", "url": "https://katwindowcleaning.com/gutter-clearance.html", "description": "Gutters emptied from £50 in Watton, Thetford, Swaffham and Attleborough. Every gutter inspected and cleaned by hand, with photos on request.", "provider": {"@id": "https://katwindowcleaning.com/#business"}, "areaServed": [{"@type": "City", "name": "Watton"}, {"@type": "City", "name": "Thetford"}, {"@type": "City", "name": "Swaffham"}, {"@type": "City", "name": "Attleborough"}, {"@type": "City", "name": "Hingham"}, {"@type": "City", "name": "Great Hockham"}], "offers": {"@type": "Offer", "priceCurrency": "GBP", "price": "50", "description": "Gutters emptied from £50"}}</script>
@@ -35,7 +36,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="./"><img src="images/KAT-Banner1.png" alt="KAT Window Cleaning, home" width="180" height="152"></a>
+    <a class="brand" href="./"><picture><source type="image/webp" srcset="images/r/KAT-Banner1-180.webp 180w" sizes="69px"><img src="images/r/KAT-Banner1-180.png" srcset="images/r/KAT-Banner1-180.png 180w" sizes="69px" alt="KAT Window Cleaning, home" width="180" height="152"></picture></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul><li><a href="./">Home</a></li><li><a href="window-cleaning.html">Window Cleaning</a></li><li><a href="commercial-window-cleaning.html">Commercial</a></li><li><a href="gutter-clearance.html" aria-current="page">Gutter Clearance</a></li><li><a href="solar-panels.html">Solar Panels</a></li></ul>
@@ -45,11 +46,17 @@
   </div>
 </header>
 <main id="main">
-<section class="page-hero" aria-labelledby="page-title">
-  <div class="wrap page-hero-grid">
-    <div>
-      <p class="crumbs"><a href="./">Home</a> / Gutter Clearance</p>
-      <h1 id="page-title">Gutter clearance in Watton, Thetford & surrounding areas</h1>
+<section class="hero hero-full hero-page hero-gutter" data-hero="shade" aria-labelledby="page-title" style="--pg-tint:0.37;--pg-tint-m:0.33">
+  <div class="hero-media">
+    <picture><source media="(max-width: 1080px)" type="image/webp" srcset="images/r/gutters_banner-m-320.webp 320w, images/r/gutters_banner-m-480.webp 480w, images/r/gutters_banner-m-640.webp 640w, images/r/gutters_banner-m-800.webp 800w, images/r/gutters_banner-m-953.webp 953w" sizes="130vw" width="953" height="681"><source media="(max-width: 1080px)" srcset="images/r/gutters_banner-m-320.jpg 320w, images/r/gutters_banner-m-480.jpg 480w, images/r/gutters_banner-m-640.jpg 640w, images/r/gutters_banner-m-800.jpg 800w, images/r/gutters_banner-m-953.jpg 953w" sizes="130vw" width="953" height="681"><source type="image/webp" srcset="images/r/gutters_banner-320.webp 320w, images/r/gutters_banner-480.webp 480w, images/r/gutters_banner-640.webp 640w, images/r/gutters_banner-800.webp 800w, images/r/gutters_banner-1024.webp 1024w, images/r/gutters_banner-1280.webp 1280w, images/r/gutters_banner-1600.webp 1600w, images/r/gutters_banner-1800.webp 1800w" sizes="175vw"><img src="images/r/gutters_banner-800.jpg" srcset="images/r/gutters_banner-320.jpg 320w, images/r/gutters_banner-480.jpg 480w, images/r/gutters_banner-640.jpg 640w, images/r/gutters_banner-800.jpg 800w, images/r/gutters_banner-1024.jpg 1024w, images/r/gutters_banner-1280.jpg 1280w, images/r/gutters_banner-1600.jpg 1600w, images/r/gutters_banner-1800.jpg 1800w" sizes="175vw" alt="" width="1800" height="681" fetchpriority="high"></picture>
+    <span class="hero-shade" aria-hidden="true"></span>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <div class="hero-title">
+        <p class="crumbs"><a href="./">Home</a> / Gutter Clearance</p>
+        <h1 id="page-title">Gutter clearance in Watton, Thetford & surrounding areas</h1>
+      </div>
       <p class="hero-lead">Blocked gutters overflow, cause damp and can damage brickwork and fascias. Every gutter is inspected and cleaned out by hand, and photos are available on request.</p>
       <p class="price-tag">Gutters emptied from £50</p>
       <div class="hero-actions">
@@ -57,7 +64,6 @@
         <a class="btn btn-ghost" href="tel:07932008040">Call 07932 008040</a>
       </div>
     </div>
-    <img class="page-hero-img" src="images/gutters_banner.jpg" alt="" width="1600" height="600">
   </div>
 </section>
 <section class="proof" aria-label="Why customers trust KAT"><ul class="wrap proof-list"><li><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg></span><span><strong>5.0 on Google</strong> from 50+ reviews</span></li><li><span><strong>Fully insured</strong> with public liability cover</span></li><li><span><strong>10+ years</strong> in the trade</span></li><li><span><strong>Free re-clean</strong> if you are not happy within 24 hours</span></li></ul></section>
@@ -84,8 +90,8 @@
       <ul class="ticks"><li>Water spilling over the edge when it rains</li><li>Plants or moss growing out of the gutter</li><li>Damp patches or stains on outside walls</li><li>Gutters sagging or pulling away from the fascia</li></ul>
     </div>
     <div class="ba" data-ba>
-      <img src="images/gutters_2.jpg" alt="The same gutter after being cleared by hand by KAT Window Cleaning" width="1200" height="1200" loading="lazy">
-      <div class="ba-before"><img src="images/gutters_1.jpg" alt="Blocked gutter full of leaves and moss before clearance" width="1200" height="1200" loading="lazy"></div>
+      <picture><source type="image/webp" srcset="images/r/gutters_2-320.webp 320w, images/r/gutters_2-480.webp 480w, images/r/gutters_2-640.webp 640w, images/r/gutters_2-800.webp 800w, images/r/gutters_2-1024.webp 1024w, images/r/gutters_2-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 560px"><img src="images/r/gutters_2-800.jpg" srcset="images/r/gutters_2-320.jpg 320w, images/r/gutters_2-480.jpg 480w, images/r/gutters_2-640.jpg 640w, images/r/gutters_2-800.jpg 800w, images/r/gutters_2-1024.jpg 1024w, images/r/gutters_2-1200.jpg 1200w" sizes="(max-width: 900px) 100vw, 560px" alt="The same gutter after being cleared by hand by KAT Window Cleaning" width="1200" height="1200" loading="lazy" decoding="async"></picture>
+      <div class="ba-before"><picture><source type="image/webp" srcset="images/r/gutters_1-320.webp 320w, images/r/gutters_1-480.webp 480w, images/r/gutters_1-640.webp 640w, images/r/gutters_1-800.webp 800w, images/r/gutters_1-1024.webp 1024w, images/r/gutters_1-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 560px"><img src="images/r/gutters_1-800.jpg" srcset="images/r/gutters_1-320.jpg 320w, images/r/gutters_1-480.jpg 480w, images/r/gutters_1-640.jpg 640w, images/r/gutters_1-800.jpg 800w, images/r/gutters_1-1024.jpg 1024w, images/r/gutters_1-1200.jpg 1200w" sizes="(max-width: 900px) 100vw, 560px" alt="Blocked gutter full of leaves and moss before clearance" width="1200" height="1200" loading="lazy" decoding="async"></picture></div>
       <span class="ba-label ba-label-before" aria-hidden="true">Before</span>
       <span class="ba-label ba-label-after" aria-hidden="true">After</span>
       <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after">
@@ -100,7 +106,7 @@
 </section>
 <section class="why" aria-labelledby="why-title">
   <div class="wrap split split-reverse">
-    <img src="images/window_cleaning__watton_6.jpg" alt="Andrew cleaning tall windows on a large house" width="1200" height="1800" loading="lazy">
+    <picture><source type="image/webp" srcset="images/r/window_cleaning__watton_6-320.webp 320w, images/r/window_cleaning__watton_6-480.webp 480w, images/r/window_cleaning__watton_6-640.webp 640w, images/r/window_cleaning__watton_6-800.webp 800w, images/r/window_cleaning__watton_6-1024.webp 1024w, images/r/window_cleaning__watton_6-1280.webp 1280w, images/r/window_cleaning__watton_6-1366.webp 1366w" sizes="(max-width: 900px) 100vw, 560px"><img src="images/r/window_cleaning__watton_6-800.jpg" srcset="images/r/window_cleaning__watton_6-320.jpg 320w, images/r/window_cleaning__watton_6-480.jpg 480w, images/r/window_cleaning__watton_6-640.jpg 640w, images/r/window_cleaning__watton_6-800.jpg 800w, images/r/window_cleaning__watton_6-1024.jpg 1024w, images/r/window_cleaning__watton_6-1280.jpg 1280w, images/r/window_cleaning__watton_6-1366.jpg 1366w" sizes="(max-width: 900px) 100vw, 560px" alt="Andrew cleaning tall windows on a large house" width="1366" height="2048" loading="lazy" decoding="async"></picture>
     <div>
       <h2 id="why-title">Why people choose KAT</h2>
       <ul class="ticks"><li>Careful, hands-on cleaning, never rushed</li><li>Fully insured with full public liability cover</li><li>Over a decade of experience</li><li>5.0 rating from 50+ Google reviews</li></ul>
@@ -166,7 +172,7 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <img src="images/KAT-Banner.png" alt="KAT Window Cleaning" width="140" height="118" loading="lazy">
+      <picture><source type="image/webp" srcset="images/r/KAT-Banner-200.webp 200w" sizes="140px"><img src="images/r/KAT-Banner-200.png" srcset="images/r/KAT-Banner-200.png 200w" sizes="140px" alt="KAT Window Cleaning" width="200" height="169" loading="lazy" decoding="async"></picture>
       <p class="footer-contact"><a href="tel:07932008040">07932 008040</a><br><a href="mailto:info@katwindowcleaning.com">info@katwindowcleaning.com</a></p>
     </div>
     <div><h2>Services</h2><ul><li><a href="window-cleaning.html">Window Cleaning</a></li><li><a href="commercial-window-cleaning.html">Commercial</a></li><li><a href="gutter-clearance.html">Gutter Clearance</a></li><li><a href="solar-panels.html">Solar Panels</a></li><li><a href="contact.html">Free quote</a></li></ul></div>
@@ -181,7 +187,7 @@
   <a class="mb-call" href="tel:07932008040"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call Andrew</a>
   <a class="mb-quote" href="contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm-1 1.5L18.5 9H13zM8 13h8v1.6H8zm0 3.5h8v1.6H8zm0-7h3v1.6H8z"/></svg>Free quote</a>
 </nav>
-<script src="js/site.js?v=7329f42b" defer></script>
+<script src="js/site.js?v=63fb600a" defer></script>
 <script src="js/contact-form.js?v=407d3594" defer></script>
 </body>
 </html>

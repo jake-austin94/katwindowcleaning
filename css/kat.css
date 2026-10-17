@@ -2,6 +2,13 @@
    Idea: clear glass. Navy ink, pane blue, teal for actions, cool white.
    Type: Barlow Condensed (headings, like van signwriting) + Barlow (text). */
 
+/* Fonts are served from this site (no trip to Google first). Barlow, SIL Open Font Licence: fonts/OFL.txt */
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/barlow-condensed-600.woff2) format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/barlow-condensed-700.woff2) format("woff2"); }
+@font-face { font-family: "Barlow"; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/barlow-400.woff2) format("woff2"); }
+@font-face { font-family: "Barlow"; font-style: normal; font-weight: 500; font-display: swap; src: url(../fonts/barlow-500.woff2) format("woff2"); }
+@font-face { font-family: "Barlow"; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/barlow-600.woff2) format("woff2"); }
+
 :root {
   --ink: #25323f;
   --ink-soft: #4a5866;
@@ -36,6 +43,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adju
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { margin: 0; background: var(--glass); color: var(--ink); font-family: var(--font-body); font-size: var(--t-body); line-height: 1.55; }
 img { display: block; max-width: 100%; height: auto; }
+/* <picture> only picks the right file size; it adds no box of its own so layouts treat the img as before */
+picture { display: contents; }
+picture > source { display: none; }
 a { color: var(--teal); text-underline-offset: 3px; }
 a:hover { color: var(--teal-dark); }
 h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.05; margin: 0 0 .5em; letter-spacing: -0.005em; }
@@ -209,8 +219,8 @@ ul, ol { margin: 0; padding: 0; }
 .included, .why, .compare { padding: var(--section) 0; }
 .included { background: var(--white); }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
-.split > img { border-radius: 4px; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.why .split > img { aspect-ratio: 4 / 5; }
+.split > img, .split > picture > img { border-radius: 4px; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.why .split > img, .why .split > picture > img { aspect-ratio: 4 / 5; }
 .compare h3 { margin-top: 28px; }
 
 /* Who (commercial) */
@@ -232,7 +242,7 @@ ul, ol { margin: 0; padding: 0; }
 
 /* Before / after slider */
 .ba { position: relative; overflow: hidden; border-radius: 4px; aspect-ratio: 1 / 1; --pos: 50%; }
-.ba > img, .ba-before img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ba > img, .ba > picture > img, .ba-before img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .ba-before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
 .ba::after { content: ""; position: absolute; top: 0; bottom: 0; left: var(--pos); width: 4px; margin-left: -2px; background: var(--white); box-shadow: 0 0 0 1px rgba(37,50,63,.3); pointer-events: none; }
 .ba-label { position: absolute; top: 14px; padding: 4px 12px; border-radius: 4px; background: var(--ink); color: var(--white); font-weight: 600; font-size: .9375rem; pointer-events: none; }
@@ -271,7 +281,7 @@ ul, ol { margin: 0; padding: 0; }
   .hero-grid, .page-hero-grid, .band-grid, .about-grid, .quote-grid, .split, .faq-grid { grid-template-columns: 1fr; }
   .hero-pane { max-width: 520px; order: -1; aspect-ratio: 4 / 3; }
   .hero-pane img { object-position: 50% 20%; }
-  .split-reverse > img { order: 2; }
+  .split-reverse > img, .split-reverse > picture > img { order: 2; }
   .proof-list { grid-template-columns: 1fr 1fr; }
   .proof-list li { padding: 14px 12px 14px 0; }
   .proof-list li + li { padding-left: 0; border-left: 0; }
@@ -344,8 +354,8 @@ ul, ol { margin: 0; padding: 0; }
 .hero-full .route-business:hover { background: var(--teal-dark); border-color: var(--teal-dark); color: var(--white); }
 
 /* 1. Side shade: Andrew moved to the right (photo mirrored) so the left is free for the words */
-.hero-full[data-hero="shade"] .hero-media img,
-.hero-full[data-hero="glass"] .hero-media img { transform: scaleX(-1); }
+.hero-home[data-hero="shade"] .hero-media img,
+.hero-home[data-hero="glass"] .hero-media img { transform: scaleX(-1); }
 .hero-full[data-hero="shade"] .hero-shade { background: linear-gradient(90deg, rgba(22, 32, 42, .94) 0%, rgba(22, 32, 42, .86) 34%, rgba(22, 32, 42, .45) 56%, rgba(22, 32, 42, 0) 74%); }
 
 /* 2. Glass panel: the words sit on a frosted pane over the photo */
@@ -403,3 +413,46 @@ ul, ol { margin: 0; padding: 0; }
   .mobile-bar a:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0, 0, 0, .22), 0 2px 6px -2px rgba(37, 50, 63, .45); }
   .mobile-bar svg { width: 20px; height: 20px; fill: currentColor; flex: none; }
 }
+
+/* Scroll fade-ins (see js/site.js): only once the script has marked the page, and never for reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on [data-reveal] { transition: opacity .7s cubic-bezier(.2, .65, .25, 1), transform .7s cubic-bezier(.2, .65, .25, 1); transition-delay: var(--rd, 0ms); }
+  .reveal-on [data-reveal]:not(.is-in) { opacity: 0; transform: translateY(26px); }
+}
+
+/* ===== Service page heroes: same full-width photo and three looks as the home page ===== */
+.hero-page .hero-media img { object-position: 50% 50%; }
+.hero-page .hero-inner { min-height: min(620px, calc(100svh - 76px)); }
+.hero-page h1 { font-size: clamp(2.5rem, 4.6vw, 3.9rem); max-width: 16ch; }
+.hero-page .crumbs { color: var(--white); }
+.hero-page .crumbs a { color: var(--white); }
+.hero-page .price-tag { margin-top: 4px; }
+.hero-page .hero-actions .btn-ghost { border-color: var(--white); color: var(--white); }
+.hero-page .hero-actions .btn-ghost:hover { background: var(--white); color: var(--ink); }
+.hero-page[data-hero="glass"] .crumbs, .hero-page[data-hero="glass"] .crumbs a { color: var(--ink-soft); }
+.hero-page[data-hero="glass"] .hero-actions .btn-ghost { border-color: var(--ink); color: var(--ink); }
+.hero-page[data-hero="glass"] .hero-actions .btn-ghost:hover { background: var(--ink); color: var(--white); }
+.hero-page[data-hero="tint"] { --tint: var(--pg-tint, .49); }
+.hero-page[data-hero="tint"] .hero-actions { justify-content: center; }
+.hero-page[data-hero="tint"] h1 { max-width: 20ch; }
+
+@media (max-width: 1080px) {
+  /* Phones and tablets: the photo runs edge to edge with the page name over its lower part,
+     then the intro, price and buttons underneath */
+  .hero-page .hero-media { height: min(92vw, 62svh); }
+  .hero-page .hero-media img, .hero-page[data-hero] .hero-media img { object-position: 50% 50%; }
+  .hero-page .hero-title { grid-row: 1; grid-column: 1; align-self: end; z-index: 1; margin: 16px var(--gutter) 22px; }
+  .hero-page .hero-title h1 { margin: 0; padding: 0; font-size: clamp(2.2rem, 9.5vw, 3rem); }
+  .hero-page .crumbs { margin: 0 0 8px; }
+  .hero-page .price-tag { grid-row: 3; justify-self: start; margin: 18px var(--gutter) 0; }
+  .hero-page .hero-actions { grid-row: 4; margin: 18px 0 0; padding: 0 var(--gutter) 34px; }
+  .hero-page .hero-actions .btn { flex: 1 1 100%; }
+  .hero-page[data-hero="shade"] .hero-shade { background: linear-gradient(0deg, rgba(37, 50, 63, 1) 0%, rgba(22, 32, 42, var(--pg-shade-m, .86)) 6%, rgba(22, 32, 42, var(--pg-shade-m, .86)) 38%, rgba(22, 32, 42, 0) 78%); }
+  .hero-page[data-hero="tint"] { --tint: var(--pg-tint-m, .46); }
+  .hero-page[data-hero="tint"] .hero-title { align-self: center; margin-bottom: 16px; text-align: center; }
+  .hero-page[data-hero="tint"] .price-tag { justify-self: center; }
+  .hero-page[data-hero="glass"] .hero-title { padding: 16px 20px; background: rgba(246, 249, 250, .86); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, .7); border-radius: 8px; }
+  .hero-page[data-hero="glass"] .hero-title h1 { background: none; border: 0; padding: 0; margin: 0; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+/* Breadcrumb sits on a small navy pill so it stays readable over any photo */
+.hero-page:not([data-hero="glass"]) .crumbs { display: inline-block; padding: 3px 10px; border-radius: 4px; background: rgba(22, 32, 42, .72); }

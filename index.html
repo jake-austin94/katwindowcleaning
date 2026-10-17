@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" data-fade="off">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,17 +22,18 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="css/kat.css?v=bf6a9cf1">
+  <link rel="preload" href="fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/kat.css?v=3988a8d0">
+  <link rel="preload" as="image" type="image/webp" media="(max-width: 1080px)" imagesrcset="images/r/window_cleaning__watton_3_mobile-320.webp 320w, images/r/window_cleaning__watton_3_mobile-480.webp 480w, images/r/window_cleaning__watton_3_mobile-640.webp 640w, images/r/window_cleaning__watton_3_mobile-800.webp 800w, images/r/window_cleaning__watton_3_mobile-1024.webp 1024w, images/r/window_cleaning__watton_3_mobile-1106.webp 1106w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" media="(min-width: 1081px)" imagesrcset="images/r/window_cleaning__watton_3-320.webp 320w, images/r/window_cleaning__watton_3-480.webp 480w, images/r/window_cleaning__watton_3-640.webp 640w, images/r/window_cleaning__watton_3-800.webp 800w, images/r/window_cleaning__watton_3-1024.webp 1024w, images/r/window_cleaning__watton_3-1280.webp 1280w, images/r/window_cleaning__watton_3-1600.webp 1600w, images/r/window_cleaning__watton_3-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://katwindowcleaning.com/#business", "name": "KAT Window Cleaning", "url": "https://katwindowcleaning.com/", "telephone": "+447932008040", "email": "info@katwindowcleaning.com", "image": "https://katwindowcleaning.com/images/og-image.jpg", "logo": "https://katwindowcleaning.com/images/icon-512.png", "priceRange": "££", "address": {"@type": "PostalAddress", "addressLocality": "Watton", "addressRegion": "Norfolk", "addressCountry": "GB"}, "areaServed": [{"@type": "City", "name": "Watton"}, {"@type": "City", "name": "Thetford"}, {"@type": "City", "name": "Swaffham"}, {"@type": "City", "name": "Attleborough"}, {"@type": "City", "name": "Hingham"}, {"@type": "City", "name": "Great Hockham"}], "sameAs": ["https://www.google.com/maps?cid=2617828129169492736"], "founder": {"@type": "Person", "name": "Andrew"}, "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Cleaning services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Window cleaning", "url": "https://katwindowcleaning.com/window-cleaning.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Commercial window cleaning", "url": "https://katwindowcleaning.com/commercial-window-cleaning.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gutter clearance", "url": "https://katwindowcleaning.com/gutter-clearance.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Solar panel cleaning", "url": "https://katwindowcleaning.com/solar-panels.html"}}]}}</script>
 </head>
 <body class="page-index">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="./"><img src="images/KAT-Banner1.png" alt="KAT Window Cleaning, home" width="180" height="152"></a>
+    <a class="brand" href="./"><picture><source type="image/webp" srcset="images/r/KAT-Banner1-180.webp 180w" sizes="69px"><img src="images/r/KAT-Banner1-180.png" srcset="images/r/KAT-Banner1-180.png 180w" sizes="69px" alt="KAT Window Cleaning, home" width="180" height="152"></picture></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul><li><a href="./" aria-current="page">Home</a></li><li><a href="window-cleaning.html">Window Cleaning</a></li><li><a href="commercial-window-cleaning.html">Commercial</a></li><li><a href="gutter-clearance.html">Gutter Clearance</a></li><li><a href="solar-panels.html">Solar Panels</a></li></ul>
@@ -42,12 +43,9 @@
   </div>
 </header>
 <main id="main">
-<section class="hero hero-full" data-hero="shade" aria-labelledby="hero-title">
+<section class="hero hero-full hero-home" data-hero="shade" aria-labelledby="hero-title">
   <div class="hero-media">
-    <picture>
-      <source media="(max-width: 1080px)" srcset="images/window_cleaning__watton_3_mobile.jpg" width="1106" height="1413">
-      <img src="images/hero-wide-1920.jpg" srcset="images/hero-wide-1280.jpg 1280w, images/hero-wide-1920.jpg 1920w" sizes="100vw" alt="Andrew from KAT Window Cleaning cleaning a tall gable window with a water-fed pole" width="1920" height="1328" fetchpriority="high">
-    </picture>
+    <picture><source media="(max-width: 1080px)" type="image/webp" srcset="images/r/window_cleaning__watton_3_mobile-320.webp 320w, images/r/window_cleaning__watton_3_mobile-480.webp 480w, images/r/window_cleaning__watton_3_mobile-640.webp 640w, images/r/window_cleaning__watton_3_mobile-800.webp 800w, images/r/window_cleaning__watton_3_mobile-1024.webp 1024w, images/r/window_cleaning__watton_3_mobile-1106.webp 1106w" sizes="100vw" width="1106" height="1413"><source media="(max-width: 1080px)" srcset="images/r/window_cleaning__watton_3_mobile-320.jpg 320w, images/r/window_cleaning__watton_3_mobile-480.jpg 480w, images/r/window_cleaning__watton_3_mobile-640.jpg 640w, images/r/window_cleaning__watton_3_mobile-800.jpg 800w, images/r/window_cleaning__watton_3_mobile-1024.jpg 1024w, images/r/window_cleaning__watton_3_mobile-1106.jpg 1106w" sizes="100vw" width="1106" height="1413"><source type="image/webp" srcset="images/r/window_cleaning__watton_3-320.webp 320w, images/r/window_cleaning__watton_3-480.webp 480w, images/r/window_cleaning__watton_3-640.webp 640w, images/r/window_cleaning__watton_3-800.webp 800w, images/r/window_cleaning__watton_3-1024.webp 1024w, images/r/window_cleaning__watton_3-1280.webp 1280w, images/r/window_cleaning__watton_3-1600.webp 1600w, images/r/window_cleaning__watton_3-1920.webp 1920w" sizes="100vw"><img src="images/r/window_cleaning__watton_3-1280.jpg" srcset="images/r/window_cleaning__watton_3-320.jpg 320w, images/r/window_cleaning__watton_3-480.jpg 480w, images/r/window_cleaning__watton_3-640.jpg 640w, images/r/window_cleaning__watton_3-800.jpg 800w, images/r/window_cleaning__watton_3-1024.jpg 1024w, images/r/window_cleaning__watton_3-1280.jpg 1280w, images/r/window_cleaning__watton_3-1600.jpg 1600w, images/r/window_cleaning__watton_3-1920.jpg 1920w" sizes="100vw" alt="Andrew from KAT Window Cleaning cleaning a tall gable window with a water-fed pole" width="1920" height="1328" fetchpriority="high"></picture>
     <span class="mist" aria-hidden="true"></span>
     <span class="hero-shade" aria-hidden="true"></span>
   </div>
@@ -73,19 +71,19 @@
   <div class="wrap">
     <h2 id="services-title">What we clean</h2>
     <ul class="service-list"><li class="service-row">
-        <img src="images/window_cleaning__watton_4.jpg" alt="" width="240" height="180" loading="lazy">
+        <picture><source type="image/webp" srcset="images/r/window_cleaning__watton_4-320.webp 320w, images/r/window_cleaning__watton_4-480.webp 480w, images/r/window_cleaning__watton_4-640.webp 640w, images/r/window_cleaning__watton_4-800.webp 800w, images/r/window_cleaning__watton_4-1024.webp 1024w, images/r/window_cleaning__watton_4-1200.webp 1200w" sizes="(max-width: 640px) 102px, 200px"><img src="images/r/window_cleaning__watton_4-800.jpg" srcset="images/r/window_cleaning__watton_4-320.jpg 320w, images/r/window_cleaning__watton_4-480.jpg 480w, images/r/window_cleaning__watton_4-640.jpg 640w, images/r/window_cleaning__watton_4-800.jpg 800w, images/r/window_cleaning__watton_4-1024.jpg 1024w, images/r/window_cleaning__watton_4-1200.jpg 1200w" sizes="(max-width: 640px) 102px, 200px" alt="" width="1200" height="1133" loading="lazy" decoding="async"></picture>
         <div class="service-text"><h3><a href="window-cleaning.html">Window cleaning</a></h3><p>Regular monthly cleans. Glass, frames and sills every visit.</p></div>
         <p class="service-price">Free quote</p>
       </li><li class="service-row">
-        <img src="images/windows_banner.jpg" alt="" width="240" height="180" loading="lazy">
+        <picture><source type="image/webp" srcset="images/r/windows_banner-320.webp 320w, images/r/windows_banner-480.webp 480w, images/r/windows_banner-640.webp 640w, images/r/windows_banner-800.webp 800w, images/r/windows_banner-1024.webp 1024w, images/r/windows_banner-1280.webp 1280w, images/r/windows_banner-1600.webp 1600w, images/r/windows_banner-1800.webp 1800w" sizes="(max-width: 640px) 289px, 422px"><img src="images/r/windows_banner-800.jpg" srcset="images/r/windows_banner-320.jpg 320w, images/r/windows_banner-480.jpg 480w, images/r/windows_banner-640.jpg 640w, images/r/windows_banner-800.jpg 800w, images/r/windows_banner-1024.jpg 1024w, images/r/windows_banner-1280.jpg 1280w, images/r/windows_banner-1600.jpg 1600w, images/r/windows_banner-1800.jpg 1800w" sizes="(max-width: 640px) 289px, 422px" alt="" width="1800" height="597" loading="lazy" decoding="async"></picture>
         <div class="service-text"><h3><a href="commercial-window-cleaning.html">Commercial window cleaning</a></h3><p>Superstores, warehouses, offices, new builds, shops and landlords, including buildings of 3 storeys and above.</p></div>
         <p class="service-price">Free quote</p>
       </li><li class="service-row">
-        <img src="images/gutters_1.jpg" alt="" width="240" height="180" loading="lazy">
+        <picture><source type="image/webp" srcset="images/r/gutters_1-320.webp 320w, images/r/gutters_1-480.webp 480w, images/r/gutters_1-640.webp 640w, images/r/gutters_1-800.webp 800w, images/r/gutters_1-1024.webp 1024w, images/r/gutters_1-1200.webp 1200w" sizes="(max-width: 640px) 96px, 200px"><img src="images/r/gutters_1-800.jpg" srcset="images/r/gutters_1-320.jpg 320w, images/r/gutters_1-480.jpg 480w, images/r/gutters_1-640.jpg 640w, images/r/gutters_1-800.jpg 800w, images/r/gutters_1-1024.jpg 1024w, images/r/gutters_1-1200.jpg 1200w" sizes="(max-width: 640px) 96px, 200px" alt="" width="1200" height="1200" loading="lazy" decoding="async"></picture>
         <div class="service-text"><h3><a href="gutter-clearance.html">Gutter clearance</a></h3><p>Every gutter inspected and cleaned out by hand, with photos on request.</p></div>
         <p class="service-price">From £50</p>
       </li><li class="service-row">
-        <img src="images/Solar.jpg" alt="" width="240" height="180" loading="lazy">
+        <picture><source type="image/webp" srcset="images/r/Solar-320.webp 320w, images/r/Solar-480.webp 480w, images/r/Solar-640.webp 640w, images/r/Solar-800.webp 800w, images/r/Solar-1024.webp 1024w, images/r/Solar-1200.webp 1200w" sizes="(max-width: 640px) 96px, 200px"><img src="images/r/Solar-800.jpg" srcset="images/r/Solar-320.jpg 320w, images/r/Solar-480.jpg 480w, images/r/Solar-640.jpg 640w, images/r/Solar-800.jpg 800w, images/r/Solar-1024.jpg 1024w, images/r/Solar-1200.jpg 1200w" sizes="(max-width: 640px) 96px, 200px" alt="" width="1200" height="1209" loading="lazy" decoding="async"></picture>
         <div class="service-text"><h3><a href="solar-panels.html">Solar panel cleaning</a></h3><p>Dirt, lichen and bird mess removed safely from the ground.</p></div>
         <p class="service-price">Free quote</p>
       </li></ul>
@@ -102,7 +100,7 @@
 </section>
 <section class="business-band" aria-labelledby="biz-title">
   <div class="wrap band-grid">
-    <img src="images/windows_banner.jpg" alt="Large commercial building with glass frontage" width="1600" height="531" loading="lazy">
+    <picture><source type="image/webp" srcset="images/r/windows_banner-320.webp 320w, images/r/windows_banner-480.webp 480w, images/r/windows_banner-640.webp 640w, images/r/windows_banner-800.webp 800w, images/r/windows_banner-1024.webp 1024w, images/r/windows_banner-1280.webp 1280w, images/r/windows_banner-1600.webp 1600w, images/r/windows_banner-1800.webp 1800w" sizes="(max-width: 900px) 201vw, 1126px"><img src="images/r/windows_banner-800.jpg" srcset="images/r/windows_banner-320.jpg 320w, images/r/windows_banner-480.jpg 480w, images/r/windows_banner-640.jpg 640w, images/r/windows_banner-800.jpg 800w, images/r/windows_banner-1024.jpg 1024w, images/r/windows_banner-1280.jpg 1280w, images/r/windows_banner-1600.jpg 1600w, images/r/windows_banner-1800.jpg 1800w" sizes="(max-width: 900px) 201vw, 1126px" alt="Large commercial building with glass frontage" width="1800" height="597" loading="lazy" decoding="async"></picture>
     <div>
       <h2 id="biz-title">Commercial window cleaning you can put on a schedule</h2>
       <ul class="ticks"><li>Superstores, warehouses and offices</li><li>New builds, shops and rental portfolios</li><li>Buildings of 3 storeys and above</li><li>Full public liability insurance</li><li>Regular contracts and electronic invoicing</li></ul>
@@ -122,7 +120,7 @@
 </section>
 <section class="about" aria-labelledby="about-title">
   <div class="wrap about-grid">
-    <img src="images/window_cleaning__watton_2_2.jpg" alt="Andrew, owner of KAT Window Cleaning, at work" width="1115" height="1284" loading="lazy">
+    <picture><source type="image/webp" srcset="images/r/window_cleaning__watton_2_2-320.webp 320w, images/r/window_cleaning__watton_2_2-480.webp 480w, images/r/window_cleaning__watton_2_2-640.webp 640w, images/r/window_cleaning__watton_2_2-800.webp 800w, images/r/window_cleaning__watton_2_2-1024.webp 1024w, images/r/window_cleaning__watton_2_2-1115.webp 1115w" sizes="(max-width: 900px) 456px, 608px"><img src="images/r/window_cleaning__watton_2_2-800.jpg" srcset="images/r/window_cleaning__watton_2_2-320.jpg 320w, images/r/window_cleaning__watton_2_2-480.jpg 480w, images/r/window_cleaning__watton_2_2-640.jpg 640w, images/r/window_cleaning__watton_2_2-800.jpg 800w, images/r/window_cleaning__watton_2_2-1024.jpg 1024w, images/r/window_cleaning__watton_2_2-1115.jpg 1115w" sizes="(max-width: 900px) 456px, 608px" alt="Andrew, owner of KAT Window Cleaning, at work" width="1115" height="1284" loading="lazy" decoding="async"></picture>
     <div>
       <h2 id="about-title">Meet Andrew</h2>
       <p>Hi, I&#x27;m Andrew, the owner of KAT Window Cleaning. I&#x27;m based in Watton and look after homes and businesses across Watton, Thetford, Swaffham, Attleborough, Hingham, Great Hockham and the surrounding villages.</p><p>With over a decade in the trade, I take pride in being trustworthy, safe and thorough. Every clean comes with a satisfaction guarantee: if you&#x27;re not happy, tell me within 24 hours and I&#x27;ll come back and re-clean for free.</p>
@@ -183,7 +181,7 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <img src="images/KAT-Banner.png" alt="KAT Window Cleaning" width="140" height="118" loading="lazy">
+      <picture><source type="image/webp" srcset="images/r/KAT-Banner-200.webp 200w" sizes="140px"><img src="images/r/KAT-Banner-200.png" srcset="images/r/KAT-Banner-200.png 200w" sizes="140px" alt="KAT Window Cleaning" width="200" height="169" loading="lazy" decoding="async"></picture>
       <p class="footer-contact"><a href="tel:07932008040">07932 008040</a><br><a href="mailto:info@katwindowcleaning.com">info@katwindowcleaning.com</a></p>
     </div>
     <div><h2>Services</h2><ul><li><a href="window-cleaning.html">Window Cleaning</a></li><li><a href="commercial-window-cleaning.html">Commercial</a></li><li><a href="gutter-clearance.html">Gutter Clearance</a></li><li><a href="solar-panels.html">Solar Panels</a></li><li><a href="contact.html">Free quote</a></li></ul></div>
@@ -198,7 +196,7 @@
   <a class="mb-call" href="tel:07932008040"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call Andrew</a>
   <a class="mb-quote" href="contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm-1 1.5L18.5 9H13zM8 13h8v1.6H8zm0 3.5h8v1.6H8zm0-7h3v1.6H8z"/></svg>Free quote</a>
 </nav>
-<script src="js/site.js?v=7329f42b" defer></script>
+<script src="js/site.js?v=63fb600a" defer></script>
 <script src="js/contact-form.js?v=407d3594" defer></script>
 </body>
 </html>
