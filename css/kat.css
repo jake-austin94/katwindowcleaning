@@ -392,3 +392,14 @@ ul, ol { margin: 0; padding: 0; }
   .hero-full[data-hero="glass"] .hero-shade { background: linear-gradient(180deg, rgba(246, 249, 250, 0) 86%, var(--glass) 100%); }
   .hero-full[data-hero="glass"] h1 { padding: 18px 20px; background: rgba(246, 249, 250, .84); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, .7); border-radius: 8px; }
 }
+
+/* Phone call/quote bar: two clear, raised buttons rather than flat colour blocks */
+@media (max-width: 640px) {
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .mobile-bar { gap: 10px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: var(--white); border-top: 1px solid var(--line); box-shadow: 0 -6px 18px rgba(37, 50, 63, .12); }
+  .mobile-bar a, .mobile-bar a + a { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; border-radius: 10px; font-size: 1.0625rem; font-weight: 700; letter-spacing: .01em; box-shadow: 0 3px 0 rgba(0, 0, 0, .22), 0 6px 14px -4px rgba(37, 50, 63, .45); transition: transform .08s, box-shadow .08s; -webkit-tap-highlight-color: transparent; }
+  .mobile-bar .mb-call { background: var(--teal); color: var(--white); }
+  .mobile-bar .mb-quote { background: var(--ink); color: var(--white); }
+  .mobile-bar a:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0, 0, 0, .22), 0 2px 6px -2px rgba(37, 50, 63, .45); }
+  .mobile-bar svg { width: 20px; height: 20px; fill: currentColor; flex: none; }
+}
