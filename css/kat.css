@@ -337,7 +337,7 @@ ul, ol { margin: 0; padding: 0; }
 .hero-inner { position: relative; display: flex; align-items: center; min-height: min(800px, calc(100svh - 76px)); padding-top: clamp(48px, 7vw, 88px); padding-bottom: clamp(48px, 7vw, 88px); }
 .hero-full .hero-copy { max-width: 600px; }
 .hero-full h1 { max-width: 17ch; font-size: clamp(2.6rem, 5vw, 4.25rem); color: var(--white); text-shadow: 0 2px 24px rgba(12, 20, 28, .35); }
-.hero-full .hero-lead { color: #e4edf1; max-width: 44ch; }
+.hero-full .hero-lead { color: var(--white); max-width: 44ch; }
 .hero-full .route-card { background: var(--white); border-color: var(--white); color: var(--ink); }
 .hero-full .route-card:hover { background: var(--pane); border-color: var(--pane); color: var(--ink); }
 .hero-full .route-business { background: var(--teal); border-color: var(--teal); color: var(--white); }
@@ -358,7 +358,12 @@ ul, ol { margin: 0; padding: 0; }
 .hero-full[data-hero="glass"] .route-business { border-color: var(--teal); }
 
 /* 3. Full tint: the whole photo darkened, words centred */
-.hero-full[data-hero="tint"] .hero-shade { background: radial-gradient(ellipse at 50% 45%, rgba(22, 32, 42, .62), rgba(22, 32, 42, .8)); }
+/* Tint strength: the lightest level where every line of text still meets WCAG AA contrast
+   (3:1 for the headline, 4.5:1 for the paragraph) against the brightest part of the photo behind it */
+.hero-full[data-hero="tint"] { --tint: .49; }
+.hero-full[data-hero="tint"] .hero-shade { background: rgba(22, 32, 42, var(--tint)); }
+.hero-full[data-hero="tint"] .hero-lead { color: var(--white); }
+@media (min-width: 1081px) { .hero-full[data-hero="tint"] .hero-lead { font-size: 1.5rem; line-height: 1.45; max-width: 40ch; } }
 .hero-full[data-hero="tint"] .hero-inner { justify-content: center; text-align: center; }
 .hero-full[data-hero="tint"] .hero-copy { max-width: 780px; }
 .hero-full[data-hero="tint"] h1 { max-width: 18ch; margin-left: auto; margin-right: auto; }
@@ -372,13 +377,18 @@ ul, ol { margin: 0; padding: 0; }
   .hero-full .hero-inner, .hero-full .hero-copy { display: contents; }
   .hero-media { position: relative; inset: auto; z-index: 0; grid-row: 1; grid-column: 1; width: 100%; height: min(127.8vw, 78svh); }
   .hero-media img, .hero-full[data-hero] .hero-media img { transform: none; object-position: 50% 100%; }
-  .hero-full h1 { grid-row: 1; grid-column: 1; align-self: start; z-index: 1; margin: 0; padding: 28px var(--gutter) 0; max-width: none; font-size: clamp(2.3rem, 10.5vw, 3rem); }
+  /* Andrew's head sits about 39.6vw up from the bottom of the photo at any width, so the
+     heading is centred in the space above that and never covers him */
+  .hero-full { --clear: calc(39.6vw + 20px); }
+  .hero-full h1 { grid-row: 1; grid-column: 1; align-self: center; z-index: 1; margin: 16px var(--gutter) var(--clear); padding: 0; max-width: none; font-size: clamp(2.3rem, 10.5vw, 3rem); }
   .hero-full .hero-lead { grid-row: 2; padding: 24px var(--gutter) 0; margin: 0 0 4px; }
   .hero-full .route { grid-row: 3; margin: 20px 0 0; padding: 0 var(--gutter) 36px; }
-  .hero-full[data-hero="shade"] .hero-shade { background: linear-gradient(180deg, rgba(22, 32, 42, .9) 0%, rgba(22, 32, 42, .72) 34%, rgba(22, 32, 42, .2) 56%, rgba(22, 32, 42, 0) 66%, rgba(22, 32, 42, 0) 88%, rgba(37, 50, 63, 1) 100%); }
-  .hero-full[data-hero="tint"] .hero-shade { background: linear-gradient(180deg, rgba(22, 32, 42, .82) 0%, rgba(22, 32, 42, .55) 50%, rgba(37, 50, 63, .85) 100%); }
+  .hero-full[data-hero="shade"] .hero-shade { background: linear-gradient(180deg, rgba(22, 32, 42, var(--shade-m)) 0%, rgba(22, 32, 42, var(--shade-m)) calc(100% - var(--clear)), rgba(22, 32, 42, 0) calc(100% - 39.6vw + 6px), rgba(22, 32, 42, 0) 88%, rgba(37, 50, 63, 1) 100%); }
+  .hero-full[data-hero="shade"] { --shade-m: .72; }
+  .hero-full[data-hero="tint"] { --tint: var(--tint-m); --tint-m: .46; }
+  .hero-full[data-hero="tint"] .hero-shade { background: linear-gradient(180deg, rgba(22, 32, 42, var(--tint)) 0%, rgba(22, 32, 42, var(--tint)) 86%, rgba(37, 50, 63, 1) 100%); }
   .hero-full[data-hero="tint"] h1 { text-align: center; }
   .hero-full[data-hero="glass"] { background: var(--glass); color: var(--ink); }
   .hero-full[data-hero="glass"] .hero-shade { background: linear-gradient(180deg, rgba(246, 249, 250, 0) 86%, var(--glass) 100%); }
-  .hero-full[data-hero="glass"] h1 { margin: 16px var(--gutter) 0; padding: 18px 20px; background: rgba(246, 249, 250, .84); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, .7); border-radius: 8px; }
+  .hero-full[data-hero="glass"] h1 { padding: 18px 20px; background: rgba(246, 249, 250, .84); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, .7); border-radius: 8px; }
 }
