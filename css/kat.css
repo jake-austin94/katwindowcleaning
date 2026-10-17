@@ -306,3 +306,20 @@ ul, ol { margin: 0; padding: 0; }
 .season-card { background: var(--pane); border-radius: var(--radius); padding: clamp(24px, 4vw, 40px); }
 .season-card h3 { font-size: 2rem; font-weight: 700; }
 .season-price { font-family: var(--font-head); font-weight: 700; font-size: 1.75rem; margin: 4px 0 20px; }
+
+/* Service tick-boxes (several can be chosen) */
+.services-pick { border: 0; padding: 0; margin: 0 0 18px; }
+.services-pick legend { margin-bottom: 8px; }
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.check { display: flex; align-items: center; gap: 10px; min-height: 50px; padding: 10px 14px; border: 1.5px solid #9fb2ba; border-radius: var(--radius); cursor: pointer; font-weight: 500; font-size: 1rem; margin: 0 !important; }
+.check input { width: 20px; height: 20px; min-height: 0; margin: 0; accent-color: var(--teal); flex: none; }
+.check:has(input:checked) { border-color: var(--teal); background: var(--pane-soft); }
+.check:has(input:focus-visible) { outline: 3px solid rgba(23,107,135,.35); }
+.field-error { color: #9b1c12; font-weight: 600; margin: 8px 0 0; font-size: 1rem; }
+@media (max-width: 640px) { .check-grid { grid-template-columns: 1fr; } }
+
+/* Keep menu items and header buttons on one line (also if the web font is slow to load) */
+.site-nav ul a, .site-nav .btn { white-space: nowrap; }
+@media (max-width: 1180px) and (min-width: 1081px) { .site-nav ul a { padding: 10px 8px; } }
+.form .check input[type="checkbox"] { width: 22px; height: 22px; min-height: 0; padding: 0; border: 0; margin: 0; flex: none; accent-color: var(--teal); }
+.form label.check { display: flex; align-items: center; gap: 12px; margin: 0; }

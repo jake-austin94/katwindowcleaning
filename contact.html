@@ -62,27 +62,27 @@
       </div>
     </div>
     <form class="kat-contact-form form" action="https://foner.app.n8n.cloud/webhook/kat-contact-form-v2-9d41a7e3" method="POST" data-page="Contact page">
-      <div class="field">
-        <label for="svc-contact-page">What do you need?</label>
-        <select id="svc-contact-page" name="service" required>
-          <option value="" disabled selected>Choose a service</option><option value="Window cleaning">Window cleaning</option><option value="Commercial window cleaning">Commercial window cleaning</option><option value="Gutter clearance">Gutter clearance</option><option value="Solar panel cleaning">Solar panel cleaning</option><option value="Something else">Something else</option>
-        </select>
-      </div>
+      <fieldset class="field services-pick" data-services>
+        <legend>What do you need? <span class="optional">Tick all that apply</span></legend>
+        <div class="check-grid"><label class="check"><input type="checkbox" name="services" value="Window cleaning"><span>Window cleaning</span></label><label class="check"><input type="checkbox" name="services" value="Commercial window cleaning"><span>Commercial window cleaning</span></label><label class="check"><input type="checkbox" name="services" value="Gutter clearance"><span>Gutter clearance</span></label><label class="check"><input type="checkbox" name="services" value="Solar panel cleaning"><span>Solar panel cleaning</span></label><label class="check"><input type="checkbox" name="services" value="Something else"><span>Something else</span></label></div>
+        <p class="field-error" data-services-error hidden>Please tick at least one service.</p>
+      </fieldset>
       <fieldset class="business" data-commercial-fields hidden>
         <legend>About your business</legend>
         <div class="field"><label for="biz-contact-page">Business or organisation</label><input id="biz-contact-page" name="business" autocomplete="organization" data-required-when-commercial></div>
         <div class="field-row">
           <div class="field"><label for="pt-contact-page">Type of property</label><select id="pt-contact-page" name="propertyType"><option value="">Choose one</option><option>Superstore or retail park</option><option>Warehouse or industrial unit</option><option>Office or business park</option><option>New build or development</option><option>Rental homes or housing portfolio</option><option>Shop</option><option>School, charity or community building</option><option>Other</option></select></div>
-          <div class="field"><label for="fq-contact-page">How often?</label><select id="fq-contact-page" name="frequency"><option value="">Choose one</option><option>Every 4 weeks</option><option>Every 8 weeks</option><option>Every 12 weeks</option><option>One-off clean</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="fq-contact-page">How often?</label><select id="fq-contact-page" name="frequency"><option value="">Choose one</option><option>Weekly</option><option>Monthly</option><option>Every 2 months</option><option>One-off clean</option><option>Not sure yet</option></select></div>
         </div>
       </fieldset>
       <div class="field-row">
         <div class="field"><label for="nm-contact-page">Your name</label><input id="nm-contact-page" name="Name" autocomplete="name" required></div>
-        <div class="field"><label for="tw-contact-page">Town or postcode</label><input id="tw-contact-page" name="location" autocomplete="postal-code"></div>
-      </div>
-      <div class="field-row">
-        <div class="field"><label for="em-contact-page">Email</label><input id="em-contact-page" type="email" name="Email" autocomplete="email" required></div>
         <div class="field"><label for="ph-contact-page">Phone <span class="optional">(optional)</span></label><input id="ph-contact-page" type="tel" name="PhoneNumber" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label for="em-contact-page">Email</label><input id="em-contact-page" type="email" name="Email" autocomplete="email" required></div>
+      <div class="field-row">
+        <div class="field"><label for="hn-contact-page">House or building number/name</label><input id="hn-contact-page" name="houseNumber" autocomplete="address-line1" required></div>
+        <div class="field"><label for="pc-contact-page">Postcode</label><input id="pc-contact-page" name="postcode" autocomplete="postal-code" required pattern="[A-Za-z]{1,2}[0-9][A-Za-z0-9]?\s*[0-9][A-Za-z]{2}" title="Please enter a full UK postcode, for example IP25 6AB" autocapitalize="characters"></div>
       </div>
       <div class="field"><label for="ms-contact-page">What would you like cleaned?</label><textarea id="ms-contact-page" name="Message" rows="4" required></textarea></div>
       <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
