@@ -335,7 +335,7 @@ ul, ol { margin: 0; padding: 0; }
 .hero-media .mist { z-index: 1; }
 .hero-shade { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
 .hero-inner { position: relative; display: flex; align-items: center; min-height: min(800px, calc(100svh - 76px)); padding-top: clamp(48px, 7vw, 88px); padding-bottom: clamp(48px, 7vw, 88px); }
-.hero-full .hero-copy { max-width: 640px; }
+.hero-full .hero-copy { max-width: 600px; }
 .hero-full h1 { max-width: 17ch; font-size: clamp(2.6rem, 5vw, 4.25rem); color: var(--white); text-shadow: 0 2px 24px rgba(12, 20, 28, .35); }
 .hero-full .hero-lead { color: #e4edf1; max-width: 44ch; }
 .hero-full .route-card { background: var(--white); border-color: var(--white); color: var(--ink); }
@@ -365,12 +365,12 @@ ul, ol { margin: 0; padding: 0; }
 .hero-full[data-hero="tint"] .hero-lead { margin-left: auto; margin-right: auto; }
 .hero-full[data-hero="tint"] .route { max-width: 640px; margin-left: auto; margin-right: auto; text-align: left; }
 
-/* Phones: the upright photo runs edge to edge with the heading over the sky and roof,
+/* Phones and tablets: the upright photo runs edge to edge with the heading over the sky and roof,
    Andrew stays in view at the bottom, and the rest follows underneath */
-@media (max-width: 700px) {
+@media (max-width: 1080px) {
   .hero-full { display: grid; grid-template-columns: 100%; }
   .hero-full .hero-inner, .hero-full .hero-copy { display: contents; }
-  .hero-media { position: relative; inset: auto; z-index: 0; grid-row: 1; grid-column: 1; aspect-ratio: 1106 / 1413; max-height: 78svh; }
+  .hero-media { position: relative; inset: auto; z-index: 0; grid-row: 1; grid-column: 1; width: 100%; height: min(127.8vw, 78svh); }
   .hero-media img, .hero-full[data-hero] .hero-media img { transform: none; object-position: 50% 100%; }
   .hero-full h1 { grid-row: 1; grid-column: 1; align-self: start; z-index: 1; margin: 0; padding: 28px var(--gutter) 0; max-width: none; font-size: clamp(2.3rem, 10.5vw, 3rem); }
   .hero-full .hero-lead { grid-row: 2; padding: 24px var(--gutter) 0; margin: 0 0 4px; }
