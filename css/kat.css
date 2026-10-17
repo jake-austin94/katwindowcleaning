@@ -323,3 +323,62 @@ ul, ol { margin: 0; padding: 0; }
 @media (max-width: 1180px) and (min-width: 1081px) { .site-nav ul a { padding: 10px 8px; } }
 .form .check input[type="checkbox"] { width: 22px; height: 22px; min-height: 0; padding: 0; border: 0; margin: 0; flex: none; accent-color: var(--teal); }
 .form label.check { display: flex; align-items: center; gap: 12px; margin: 0; }
+
+/* ===== Full-width home hero =====
+   The photo fills the screen edge to edge with no frame, and the text sits on it.
+   Three looks share the same markup, chosen with data-hero on the section:
+   shade = navy shading from the left, glass = frosted panel, tint = whole photo darkened. */
+.hero-full { position: relative; isolation: isolate; overflow: hidden; padding: 0; background: var(--ink); color: var(--white); }
+.hero-media { position: absolute; inset: 0; z-index: -1; }
+.hero-media picture, .hero-media img { display: block; width: 100%; height: 100%; }
+.hero-media img { object-fit: cover; object-position: 50% 90%; }
+.hero-media .mist { z-index: 1; }
+.hero-shade { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.hero-inner { position: relative; display: flex; align-items: center; min-height: min(800px, calc(100svh - 76px)); padding-top: clamp(48px, 7vw, 88px); padding-bottom: clamp(48px, 7vw, 88px); }
+.hero-full .hero-copy { max-width: 640px; }
+.hero-full h1 { max-width: 17ch; font-size: clamp(2.6rem, 5vw, 4.25rem); color: var(--white); text-shadow: 0 2px 24px rgba(12, 20, 28, .35); }
+.hero-full .hero-lead { color: #e4edf1; max-width: 44ch; }
+.hero-full .route-card { background: var(--white); border-color: var(--white); color: var(--ink); }
+.hero-full .route-card:hover { background: var(--pane); border-color: var(--pane); color: var(--ink); }
+.hero-full .route-business { background: var(--teal); border-color: var(--teal); color: var(--white); }
+.hero-full .route-business:hover { background: var(--teal-dark); border-color: var(--teal-dark); color: var(--white); }
+
+/* 1. Side shade: Andrew moved to the right (photo mirrored) so the left is free for the words */
+.hero-full[data-hero="shade"] .hero-media img,
+.hero-full[data-hero="glass"] .hero-media img { transform: scaleX(-1); }
+.hero-full[data-hero="shade"] .hero-shade { background: linear-gradient(90deg, rgba(22, 32, 42, .94) 0%, rgba(22, 32, 42, .86) 34%, rgba(22, 32, 42, .45) 56%, rgba(22, 32, 42, 0) 74%); }
+
+/* 2. Glass panel: the words sit on a frosted pane over the photo */
+.hero-full[data-hero="glass"] .hero-shade { background: linear-gradient(90deg, rgba(22, 32, 42, .25), rgba(22, 32, 42, 0) 60%); }
+.hero-full[data-hero="glass"] .hero-copy { padding: clamp(24px, 3vw, 40px); background: rgba(246, 249, 250, .84); -webkit-backdrop-filter: blur(16px) saturate(1.1); backdrop-filter: blur(16px) saturate(1.1); border: 1px solid rgba(255, 255, 255, .7); border-radius: 8px; box-shadow: 0 30px 60px -30px rgba(12, 20, 28, .55); }
+.hero-full[data-hero="glass"] h1 { color: var(--ink); text-shadow: none; }
+.hero-full[data-hero="glass"] .hero-lead { color: var(--ink-soft); }
+.hero-full[data-hero="glass"] .route-card { border-color: var(--ink); }
+.hero-full[data-hero="glass"] .route-card:hover { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.hero-full[data-hero="glass"] .route-business { border-color: var(--teal); }
+
+/* 3. Full tint: the whole photo darkened, words centred */
+.hero-full[data-hero="tint"] .hero-shade { background: radial-gradient(ellipse at 50% 45%, rgba(22, 32, 42, .62), rgba(22, 32, 42, .8)); }
+.hero-full[data-hero="tint"] .hero-inner { justify-content: center; text-align: center; }
+.hero-full[data-hero="tint"] .hero-copy { max-width: 780px; }
+.hero-full[data-hero="tint"] h1 { max-width: 18ch; margin-left: auto; margin-right: auto; }
+.hero-full[data-hero="tint"] .hero-lead { margin-left: auto; margin-right: auto; }
+.hero-full[data-hero="tint"] .route { max-width: 640px; margin-left: auto; margin-right: auto; text-align: left; }
+
+/* Phones: the upright photo runs edge to edge with the heading over the sky and roof,
+   Andrew stays in view at the bottom, and the rest follows underneath */
+@media (max-width: 700px) {
+  .hero-full { display: grid; grid-template-columns: 100%; }
+  .hero-full .hero-inner, .hero-full .hero-copy { display: contents; }
+  .hero-media { position: relative; inset: auto; z-index: 0; grid-row: 1; grid-column: 1; aspect-ratio: 1106 / 1413; max-height: 78svh; }
+  .hero-media img, .hero-full[data-hero] .hero-media img { transform: none; object-position: 50% 100%; }
+  .hero-full h1 { grid-row: 1; grid-column: 1; align-self: start; z-index: 1; margin: 0; padding: 28px var(--gutter) 0; max-width: none; font-size: clamp(2.3rem, 10.5vw, 3rem); }
+  .hero-full .hero-lead { grid-row: 2; padding: 24px var(--gutter) 0; margin: 0 0 4px; }
+  .hero-full .route { grid-row: 3; margin: 20px 0 0; padding: 0 var(--gutter) 36px; }
+  .hero-full[data-hero="shade"] .hero-shade { background: linear-gradient(180deg, rgba(22, 32, 42, .9) 0%, rgba(22, 32, 42, .72) 34%, rgba(22, 32, 42, .2) 56%, rgba(22, 32, 42, 0) 66%, rgba(22, 32, 42, 0) 88%, rgba(37, 50, 63, 1) 100%); }
+  .hero-full[data-hero="tint"] .hero-shade { background: linear-gradient(180deg, rgba(22, 32, 42, .82) 0%, rgba(22, 32, 42, .55) 50%, rgba(37, 50, 63, .85) 100%); }
+  .hero-full[data-hero="tint"] h1 { text-align: center; }
+  .hero-full[data-hero="glass"] { background: var(--glass); color: var(--ink); }
+  .hero-full[data-hero="glass"] .hero-shade { background: linear-gradient(180deg, rgba(246, 249, 250, 0) 86%, var(--glass) 100%); }
+  .hero-full[data-hero="glass"] h1 { margin: 16px var(--gutter) 0; padding: 18px 20px; background: rgba(246, 249, 250, .84); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, .7); border-radius: 8px; }
+}

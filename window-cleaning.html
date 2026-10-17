@@ -111,6 +111,15 @@
       </div>
     </div>
     <form class="kat-contact-form form" action="https://foner.app.n8n.cloud/webhook/kat-contact-form-v2-9d41a7e3" method="POST" data-page="Window Cleaning page">
+      <div class="field-row">
+        <div class="field"><label for="nm-window-cleaning-page">Your name</label><input id="nm-window-cleaning-page" name="Name" autocomplete="name" required></div>
+        <div class="field"><label for="ph-window-cleaning-page">Phone <span class="optional">(optional)</span></label><input id="ph-window-cleaning-page" type="tel" name="PhoneNumber" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label for="em-window-cleaning-page">Email</label><input id="em-window-cleaning-page" type="email" name="Email" autocomplete="email" required></div>
+      <div class="field-row">
+        <div class="field"><label for="hn-window-cleaning-page">House or building number/name</label><input id="hn-window-cleaning-page" name="houseNumber" autocomplete="address-line1" required></div>
+        <div class="field"><label for="pc-window-cleaning-page">Postcode</label><input id="pc-window-cleaning-page" name="postcode" autocomplete="postal-code" required pattern="[A-Za-z]{1,2}[0-9][A-Za-z0-9]?\s*[0-9][A-Za-z]{2}" title="Please enter a full UK postcode, for example IP25 6AB" autocapitalize="characters"></div>
+      </div>
       <fieldset class="field services-pick" data-services>
         <legend>What do you need? <span class="optional">Tick all that apply</span></legend>
         <div class="check-grid"><label class="check"><input type="checkbox" name="services" value="Window cleaning" checked><span>Window cleaning</span></label><label class="check"><input type="checkbox" name="services" value="Commercial window cleaning"><span>Commercial window cleaning</span></label><label class="check"><input type="checkbox" name="services" value="Gutter clearance"><span>Gutter clearance</span></label><label class="check"><input type="checkbox" name="services" value="Solar panel cleaning"><span>Solar panel cleaning</span></label><label class="check"><input type="checkbox" name="services" value="Something else"><span>Something else</span></label></div>
@@ -124,15 +133,6 @@
           <div class="field"><label for="fq-window-cleaning-page">How often?</label><select id="fq-window-cleaning-page" name="frequency"><option value="">Choose one</option><option>Weekly</option><option>Monthly</option><option>Every 2 months</option><option>One-off clean</option><option>Not sure yet</option></select></div>
         </div>
       </fieldset>
-      <div class="field-row">
-        <div class="field"><label for="nm-window-cleaning-page">Your name</label><input id="nm-window-cleaning-page" name="Name" autocomplete="name" required></div>
-        <div class="field"><label for="ph-window-cleaning-page">Phone <span class="optional">(optional)</span></label><input id="ph-window-cleaning-page" type="tel" name="PhoneNumber" autocomplete="tel"></div>
-      </div>
-      <div class="field"><label for="em-window-cleaning-page">Email</label><input id="em-window-cleaning-page" type="email" name="Email" autocomplete="email" required></div>
-      <div class="field-row">
-        <div class="field"><label for="hn-window-cleaning-page">House or building number/name</label><input id="hn-window-cleaning-page" name="houseNumber" autocomplete="address-line1" required></div>
-        <div class="field"><label for="pc-window-cleaning-page">Postcode</label><input id="pc-window-cleaning-page" name="postcode" autocomplete="postal-code" required pattern="[A-Za-z]{1,2}[0-9][A-Za-z0-9]?\s*[0-9][A-Za-z]{2}" title="Please enter a full UK postcode, for example IP25 6AB" autocapitalize="characters"></div>
-      </div>
       <div class="field"><label for="ms-window-cleaning-page">What would you like cleaned?</label><textarea id="ms-window-cleaning-page" name="Message" rows="4" required></textarea></div>
       <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
       <button class="btn btn-solid btn-wide" type="submit">Send my enquiry</button>

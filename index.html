@@ -42,8 +42,16 @@
   </div>
 </header>
 <main id="main">
-<section class="hero" aria-labelledby="hero-title">
-  <div class="wrap hero-grid">
+<section class="hero hero-full" data-hero="shade" aria-labelledby="hero-title">
+  <div class="hero-media">
+    <picture>
+      <source media="(max-width: 700px)" srcset="images/window_cleaning__watton_3_mobile.jpg" width="1106" height="1413">
+      <img src="images/hero-wide-1920.jpg" srcset="images/hero-wide-1280.jpg 1280w, images/hero-wide-1920.jpg 1920w" sizes="100vw" alt="Andrew from KAT Window Cleaning cleaning a tall gable window with a water-fed pole" width="1920" height="1328" fetchpriority="high">
+    </picture>
+    <span class="mist" aria-hidden="true"></span>
+    <span class="hero-shade" aria-hidden="true"></span>
+  </div>
+  <div class="wrap hero-inner">
     <div class="hero-copy">
       <h1 id="hero-title">Window, gutter & solar panel cleaning in Watton & Thetford</h1>
       <p class="hero-lead">Andrew and KAT Window Cleaning look after homes and businesses across Watton, Thetford, Swaffham, Attleborough, Hingham, Great Hockham and the surrounding villages.</p>
@@ -58,10 +66,6 @@
         </a>
       </div>
     </div>
-    <figure class="hero-pane">
-      <img src="images/window_cleaning__watton_3_mobile.jpg" alt="Andrew from KAT Window Cleaning cleaning a tall gable window with a water-fed pole" width="1106" height="1413" fetchpriority="high">
-      <span class="mist" aria-hidden="true"></span>
-    </figure>
   </div>
 </section>
 <section class="proof" aria-label="Why customers trust KAT"><ul class="wrap proof-list"><li><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg></span><span><strong>5.0 on Google</strong> from 50+ reviews</span></li><li><span><strong>Fully insured</strong> with public liability cover</span></li><li><span><strong>10+ years</strong> in the trade</span></li><li><span><strong>Free re-clean</strong> if you are not happy within 24 hours</span></li></ul></section>
@@ -146,6 +150,15 @@
       </div>
     </div>
     <form class="kat-contact-form form" action="https://foner.app.n8n.cloud/webhook/kat-contact-form-v2-9d41a7e3" method="POST" data-page="Home page">
+      <div class="field-row">
+        <div class="field"><label for="nm-home-page">Your name</label><input id="nm-home-page" name="Name" autocomplete="name" required></div>
+        <div class="field"><label for="ph-home-page">Phone <span class="optional">(optional)</span></label><input id="ph-home-page" type="tel" name="PhoneNumber" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label for="em-home-page">Email</label><input id="em-home-page" type="email" name="Email" autocomplete="email" required></div>
+      <div class="field-row">
+        <div class="field"><label for="hn-home-page">House or building number/name</label><input id="hn-home-page" name="houseNumber" autocomplete="address-line1" required></div>
+        <div class="field"><label for="pc-home-page">Postcode</label><input id="pc-home-page" name="postcode" autocomplete="postal-code" required pattern="[A-Za-z]{1,2}[0-9][A-Za-z0-9]?\s*[0-9][A-Za-z]{2}" title="Please enter a full UK postcode, for example IP25 6AB" autocapitalize="characters"></div>
+      </div>
       <fieldset class="field services-pick" data-services>
         <legend>What do you need? <span class="optional">Tick all that apply</span></legend>
         <div class="check-grid"><label class="check"><input type="checkbox" name="services" value="Window cleaning"><span>Window cleaning</span></label><label class="check"><input type="checkbox" name="services" value="Commercial window cleaning"><span>Commercial window cleaning</span></label><label class="check"><input type="checkbox" name="services" value="Gutter clearance"><span>Gutter clearance</span></label><label class="check"><input type="checkbox" name="services" value="Solar panel cleaning"><span>Solar panel cleaning</span></label><label class="check"><input type="checkbox" name="services" value="Something else"><span>Something else</span></label></div>
@@ -159,15 +172,6 @@
           <div class="field"><label for="fq-home-page">How often?</label><select id="fq-home-page" name="frequency"><option value="">Choose one</option><option>Weekly</option><option>Monthly</option><option>Every 2 months</option><option>One-off clean</option><option>Not sure yet</option></select></div>
         </div>
       </fieldset>
-      <div class="field-row">
-        <div class="field"><label for="nm-home-page">Your name</label><input id="nm-home-page" name="Name" autocomplete="name" required></div>
-        <div class="field"><label for="ph-home-page">Phone <span class="optional">(optional)</span></label><input id="ph-home-page" type="tel" name="PhoneNumber" autocomplete="tel"></div>
-      </div>
-      <div class="field"><label for="em-home-page">Email</label><input id="em-home-page" type="email" name="Email" autocomplete="email" required></div>
-      <div class="field-row">
-        <div class="field"><label for="hn-home-page">House or building number/name</label><input id="hn-home-page" name="houseNumber" autocomplete="address-line1" required></div>
-        <div class="field"><label for="pc-home-page">Postcode</label><input id="pc-home-page" name="postcode" autocomplete="postal-code" required pattern="[A-Za-z]{1,2}[0-9][A-Za-z0-9]?\s*[0-9][A-Za-z]{2}" title="Please enter a full UK postcode, for example IP25 6AB" autocapitalize="characters"></div>
-      </div>
       <div class="field"><label for="ms-home-page">What would you like cleaned?</label><textarea id="ms-home-page" name="Message" rows="4" required></textarea></div>
       <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
       <button class="btn btn-solid btn-wide" type="submit">Send my enquiry</button>
