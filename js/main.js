@@ -661,6 +661,7 @@
       data.set("website", field("website").value);
       data.set("page", form.getAttribute("data-page") || "Website");
       data.set("t", String(Date.now() - loadedAt));
+      data.set("visit_ref", window.__visitRef || "");
 
       if (PREVIEW) {
         showSuccess(name);
@@ -678,7 +679,11 @@
       fetch(ENDPOINT, { method: "POST", body: data, signal: controller ? controller.signal : undefined })
         .then(function (res) {
           return res.json().catch(function () { return {}; }).then(function (json) {
-            if (res.ok && json.ok !== false) { showSuccess(name); return; }
+            if (res.ok && json.ok !== false) {
+              if (window.katConvert) window.katConvert();
+              showSuccess(name);
+              return;
+            }
             throw new Error((json && json.error) || "Send failed");
           });
         })
